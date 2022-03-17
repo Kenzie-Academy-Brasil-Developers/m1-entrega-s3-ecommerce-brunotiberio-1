@@ -82,6 +82,12 @@ main {
     color: #FFFFFF;
 }
 
+.pesquisar button:hover {
+    border: 1px solid black;
+    color: #ff0000;
+
+}
+
 .areaProdutos {
     text-align-last: center;
     margin-right: 20px;
