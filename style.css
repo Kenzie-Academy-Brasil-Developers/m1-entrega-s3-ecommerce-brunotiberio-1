@@ -1,0 +1,231 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #F5F5F5;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.titulo1{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.menu {
+    display: flex;
+}
+.menu li {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #828282;
+    margin-right: 20px;
+
+}
+
+.menu li:hover {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: #333333;
+
+}
+
+main {
+    display: flex;
+}
+
+.pesquisar input {
+    width: 246px;
+    height: 50px;
+    left: 1138px;
+    top: 97px;
+    background-color: #F5F5F5;
+    border: 1px solid #F5F5F5;
+    box-sizing: border-box;
+}
+
+.pesquisar input:hover {
+    width: 246px;
+    height: 50px;
+    left: 1138px;
+    top: 97px;
+    background-color: #F5F5F5;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+.pesquisar button {
+    width: 96px;
+    height: 50px;
+    left: 1392px;
+    top: 97px;
+    background-color: #6B54DE;
+    border: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+
+.areaProdutos {
+    text-align-last: center;
+    margin-right: 20px;
+}
+
+.produtos {
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.itemProdutos{
+    width: 300px;
+    height: 350px;
+    text-align: justify;
+}
+
+.itemProdutos:hover {
+    border: 2px solid #2E245E;
+    box-sizing: border-box;
+    transform: matrix(1, 0, 0, 1, 0, 0)
+    
+}
+
+.itemProdutos img {
+    align-items: center;
+}
+
+.nomeProduto {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: #333333;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.descricao {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #828282;
+    margin-bottom: 15px;
+}
+
+.preco {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: #2E245E;
+    margin-bottom: 15px;
+
+}
+
+.itemProdutos span {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: underline;
+    color: #828282;
+    margin-bottom: 15px;
+}
+
+.itemProdutos span:hover {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration-line: underline;
+    color: #6B54DE;
+
+}
+
+.CarrinhoEPesquisa {
+    margin-right: 40px;
+}
+
+.pesquisar {
+    margin-bottom: 20px;
+}
+
+.carrinho {
+    width: 347px;
+    height: 50px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background: #6B54DE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.carrinhoItens {
+    width: 347px;
+    height: 344px;
+    left: 1138px;
+    top: 200px;
+    background: #F5F5F5;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carrinhoItens:hover {
+        width: 347px;
+        height: 344px;
+        left: 1138px;
+        top: 200px;
+        background: #F5F5F5;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid black;
+}
+
+.vazio {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 24px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.vazioDescricao {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #828282;
+}
+
+
+
