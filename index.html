@@ -17,10 +17,10 @@
     <section>
         <nav class="navegacao">
             <ul id="nav" class="menu">
-                <li class="active">Todos</li>
-                <li class="active">Pacotes</li>
-                <li class="active">Informática</li>
-                <li class="active">Profissões</li>
+                <li data-tag="Todos" class="item active">Todos</li>
+                <li data-tag="Pacotes" class="item">Pacotes</li>
+                <li data-tag="Informática" class="item">Informática</li>
+                <li data-tag="Profissões" class="item">Profissões</li>
             </ul>
         </nav>
     </header>
@@ -86,8 +86,8 @@
     
         <section class="CarrinhoEPesquisa">
             <div class="pesquisar">
-                <input type="text" placeholder="Digite aqui sua pesquisa">
-                <button>Pesquisar</button>
+                <input id="inputPesquisa" type="text" placeholder="Digite aqui sua pesquisa">
+                <button id="botaoBuscar">Pesquisar</button>
             </div>
             <section class="carrinhoArea">
                     <h2 class="carrinho">Carrinho de compras</h2>
@@ -99,9 +99,12 @@
         </section>
     </main>
     <script src="./assets/js/produtos.js"></script>
-    <script src="./assets/js/filtros.js"></script>
+    
     <script src="./assets/js/pesquisa.js"></script>
+     
     <script src="./assets/js/carrinho.js"></script>
-    <script src="./assets/js/script.js"></script>    
+    <script src="./assets/js/filtros.js"></script>
+    <script src="./assets/js/script.js"></script>
+       
 </body>
 </html>
