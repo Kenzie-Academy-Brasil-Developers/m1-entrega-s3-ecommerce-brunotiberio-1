@@ -42,8 +42,16 @@ header {
     font-size: 16px;
     line-height: 16px;
     color: #333333;
-
 }
+
+.active {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: #333333;
+}
+
 
 main {
     display: flex;
@@ -113,9 +121,9 @@ main {
 }
 
 .itemProdutos:hover {
-    border: 2px solid #2E245E;
+    border: 1px solid #2E245E;
     box-sizing: border-box;
-    transform: matrix(1, 0, 0, 1, 0, 0)
+    transform: matrix(1, 0, 0, 1, 0, 0);
     
 }
 
@@ -140,6 +148,8 @@ main {
     line-height: 16px;
     color: #828282;
     margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .preco {
@@ -159,7 +169,6 @@ main {
     line-height: 16px;
     text-decoration: underline;
     color: #828282;
-    margin-bottom: 15px;
     cursor: pointer;
 }
 
