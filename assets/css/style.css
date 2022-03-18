@@ -25,6 +25,7 @@ header {
 .menu {
     display: flex;
 }
+
 .menu li {
     font-style: normal;
     font-weight: 400;
@@ -69,10 +70,7 @@ main {
 }
 
 .pesquisar input:hover {
-    width: 246px;
-    height: 50px;
-    left: 1138px;
-    top: 97px;
+
     background-color: #F5F5F5;
     border: 1px solid #000000;
     box-sizing: border-box;
@@ -115,9 +113,12 @@ main {
 
 .itemProdutos{
     width: 288px;
-    height: 365px;
+    height: 390px;
     text-align: justify;
     margin-bottom: 10px;
+    border: 1px solid #F5F5F5;
+    box-sizing: border-box;
+    transform: matrix(1, 0, 0, 1, 0, 0);
 }
 
 .itemProdutos:hover {
@@ -222,6 +223,7 @@ main {
     left: 1138px;
     top: 200px;
     background: #F5F5F5;
+    border: 1px solid #F5F5F5;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -229,16 +231,7 @@ main {
 }
 
 .carrinhoItens:hover {
-        width: 347px;
-        height: 344px;
-        left: 1138px;
-        top: 200px;
-        background: #F5F5F5;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        border: 1px solid black;
+    border: 1px solid black;
 }
 
 .vazio {
