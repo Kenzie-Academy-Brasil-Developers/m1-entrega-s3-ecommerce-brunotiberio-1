@@ -10,14 +10,14 @@ const produtos = [
         img: './assets/img/Logo-Informática-Turbo.png',
         nome: 'Informática Turbo',
         descricao: 'Aprenda INFORMÁTICA de forma definitiva, estudando poucas horas por dia. No final, você ganha um certificado de 156 horas válido em todo Brasil.',
-        preco: '$ 397,00',
+        preco: 'R$ 397,00',
         tags: ['Pacotes']
     },
     {
         img: './assets/img/rotinas-administrativas.png',
         nome: 'Rotinas Administrativas',
         descricao: 'Quer estar pronto para trabalhar em qualquer setor administrativo de qualquer empresa? Aprenda tudo sobre ROTINAS ADM e no final, você ganha um certificado de 150 horas válido em todo Brasil.',
-        preco: '$ 397,00',
+        preco: 'R$ 397,00',
         tags: ['Pacotes']
     },
     {

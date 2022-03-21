@@ -28,6 +28,7 @@ function filtroTags(arrayProdutos){
         pPreco.innerText = arrayProdutos[i].preco
 
         const span = document.createElement('span')
+        span.classList.add('botaoAddCarrinho')
         span.innerText = 'Adicionar ao carrinho'
 
         li.appendChild(img)

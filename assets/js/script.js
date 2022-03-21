@@ -27,3 +27,7 @@ buttonBuscar.addEventListener('click', encontrarProdutos);
 const listItem = document.getElementById('nav');
 listItem.addEventListener('click', filtroPosts)
 
+const addProdutos = document.getElementsByClassName('botaoAddCarrinho')
+addProdutos.addEventListener('click', addCarrinhoCompras)
+
+
