@@ -25,10 +25,11 @@ function filtroTags(arrayProdutos){
 
         const pPreco = document.createElement('p')
         pPreco.classList.add('preco')
-        pPreco.innerText = arrayProdutos[i].preco
+        pPreco.innerText = 'R$ ' + arrayProdutos[i].preco + ',00'
 
         const span = document.createElement('span')
         span.classList.add('botaoAddCarrinho')
+        span.id = produtos[i].id
         span.innerText = 'Adicionar ao carrinho'
 
         li.appendChild(img)
@@ -45,9 +46,9 @@ function filtroTags(arrayProdutos){
 filtroTags(produtos)
 
 
-function filtroPosts(evento){
-    const novoProduto = []
-    const card = evento.target
+function filtroPosts(event){
+    const novoProduto = [] // ja está no global
+    const card = event.target
     const arrayProdutos = document.querySelectorAll('.item')
 
     if(card.dataset.tag === 'Todos'){

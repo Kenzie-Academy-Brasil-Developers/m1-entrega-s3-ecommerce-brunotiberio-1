@@ -1,113 +1,101 @@
-function addCarrinhoCompras(arrayProdutos){
+const bancoDeDadosCarrinho = []
 
-        const carrinho = document.querySelector('.carrinhoItens')
-        carrinho.innerText = ''
+function addCarrinhoCompras(){
 
-        const carrinhoCheio = document.createElement('div')
-        carrinhoCheio.classList.add('carrinhoCheio')
+    //verificação do banco de dados do carrinho para montar o design
 
-        const somaCarrinho = document.createElement('div')
-        somaCarrinho.classList.add('somaCarrinho')
+   if(bancoDeDadosCarrinho.length === 0){
 
-        const divCarrinhoQuantidade = document.createElement('div')
-        divCarrinhoQuantidade.classList.add('carrinhoQuantidade')
+    //carrinho vazio se tamanho do banco de dados do carrinho for igual a 0   
+        
+    const divCarrinhoVazio = document.createElement('div')
+    divCarrinhoVazio.classList.add('carrinhoItens')
 
-        const pCarrinhoQuantidade = document.createElement('p')
-        pCarrinhoQuantidade.classList.add('quantidade')
-        pCarrinhoQuantidade.innerText = 'Quantidade:'
+    const pVazio = document.createElement('p')
+    pVazio.classList.add('vazio')
+    pVazio.innerText = 'Carrinho vazio'
 
-        const pCarrinhoTotal = document.createElement('p')
-        pCarrinhoTotal.classList.add('carrinhoTotal')
-        pCarrinhoQuantidade.innerText = 'Total:'
+    const pVazioDescricao = document.createElement('p')
+    pVazioDescricao.classList.add('vazioDescricao')
+    pVazioDescricao.innerText = 'Adicione itens'
 
-        const divCarrinhoValor = document.createElement('div')
-        divCarrinhoValor.classList.add('carrinhoValor')
+    divCarrinhoVazio.appendChild(pVazio)
+    divCarrinhoVazio.appendChild(pVazioDescricao)    
 
-        const pValorQuantidade = document.createElement('p')
-        pValorQuantidade.classList.add('valorQuantidade')
-        pCarrinhoQuantidade.innerText = 'Quantidade:'
+   } else{
 
-        const pValorTotal = document.createElement('p')
-        pValorTotal.classList.add('valorTotal')
-        pCarrinhoQuantidade.innerText = 'Total: R$ '
-    
+    //carrinho com itens se tamanho do banco de dados do carrinho for diferente a 0
 
-        for(let i = 0; i < produtos.length; i++){
+    const carrinho = document.querySelector('.carrinhoItens')
+    console.log(carrinho)
+    carrinho.innerText = ''
 
-            const divImgCarrinho = document.createElement('div')
-            divImgCarrinho.classList.add('carrinhoImagem')
+    const carrinhoCheio = document.createElement('div')
+    carrinhoCheio.classList.add('carrinhoCheio')
 
-            const imgCarrinho = document.createElement('img')
-            imgCarrinho.src = arrayProdutos[i].img
+    const somaCarrinho = document.createElement('div')
+    somaCarrinho.classList.add('somaCarrinho')
 
-            const divTextosCarrinho = document.createElement('div')
+    const divCarrinhoQuantidade = document.createElement('div')
+    divCarrinhoQuantidade.classList.add('carrinhoQuantidade')
 
-            const h3Carrinho = document.createElement('h3')
-            h3Carrinho.classList.add('carrinhoNome')
-            h3Carrinho.innerText = arrayProdutos[i].nome
+    const pCarrinhoQuantidade = document.createElement('p')
+    pCarrinhoQuantidade.classList.add('quantidade')
+    pCarrinhoQuantidade.innerText = 'Quantidade:'
 
-            const pCarrinho = document.createElement('p')
-            pCarrinho.classList.add('carrinhoPreco')
-            pCarrinho.innerText = arrayProdutos[i].preco
+    const pCarrinhoTotal = document.createElement('p')
+    pCarrinhoTotal.classList.add('carrinhoTotal')
+    pCarrinhoQuantidade.innerText = 'Total:'
 
-            const spanCarrinho = document.createElement('span')
-            spanCarrinho.classList.add('removerProduto')
-            spanCarrinho.innerText = 'Remover produto'
+    const divCarrinhoValor = document.createElement('div')
+    divCarrinhoValor.classList.add('carrinhoValor')
 
-            divTextosCarrinho.appendChild(spanCarrinho)
-            divTextosCarrinho.appendChild(pCarrinho)
-            divTextosCarrinho.appendChild(h3Carrinho)
-            divImgCarrinho.appendChild(imgCarrinho)
-            carrinhoCheio.appendChild(divImgCarrinho)
-            carrinhoCheio.appendChild(divTextosCarrinho)
+    const pValorQuantidade = document.createElement('p')
+    pValorQuantidade.classList.add('valorQuantidade')
+    pCarrinhoQuantidade.innerText = 'Quantidade:'
 
-            divCarrinhoQuantidade.appendChild(pCarrinhoQuantidade)
-            divCarrinhoQuantidade.appendChild(pCarrinhoTotal)
+    const pValorTotal = document.createElement('p')
+    pValorTotal.classList.add('valorTotal')
+    pCarrinhoQuantidade.innerText = 'Total: R$ '
+
+    for(let i = 0; i < bancoDeDadosCarrinho.length; i++){
+
+        const divImgCarrinho = document.createElement('div')
+        divImgCarrinho.classList.add('carrinhoImagem')
+
+        const imgCarrinho = document.createElement('img')
+        imgCarrinho.src = bancoDeDadosCarrinho[i].img
+
+        const divTextosCarrinho = document.createElement('div')
+
+        const h3Carrinho = document.createElement('h3')
+        h3Carrinho.classList.add('carrinhoNome')
+        h3Carrinho.innerText = bancoDeDadosCarrinho[i].nome
+
+        const pCarrinho = document.createElement('p')
+        pCarrinho.classList.add('carrinhoPreco')
+        pCarrinho.innerText = bancoDeDadosCarrinho[i].preco
+
+        const spanCarrinho = document.createElement('span')
+        spanCarrinho.classList.add('removerProduto')
+        spanCarrinho.innerText = 'Remover produto'
+
+        divTextosCarrinho.appendChild(spanCarrinho)
+        divTextosCarrinho.appendChild(pCarrinho)
+        divTextosCarrinho.appendChild(h3Carrinho)
+        divImgCarrinho.appendChild(imgCarrinho)
+        carrinhoCheio.appendChild(divImgCarrinho)
+        carrinhoCheio.appendChild(divTextosCarrinho)
+
+        divCarrinhoQuantidade.appendChild(pCarrinhoQuantidade)
+        divCarrinhoQuantidade.appendChild(pCarrinhoTotal)
         
             
-            divCarrinhoValor.appendChild(pValorQuantidade)
-            divCarrinhoValor.appendChild(pValorTotal)
+        divCarrinhoValor.appendChild(pValorQuantidade)
+        divCarrinhoValor.appendChild(pValorTotal)
             
-            somaCarrinho.appendChild(divCarrinhoQuantidade)
-            somaCarrinho.appendChild(divCarrinhoValor)
+        somaCarrinho.appendChild(divCarrinhoQuantidade)
+        somaCarrinho.appendChild(divCarrinhoValor)
         }
     }
-
-function carrinhoPosts(event){
-    const novoProduto = []
-    const card = event.target
-    console.log(card)
-    const arrayProdutos = document.querySelectorAll('.itemProdutos')
-
-    if(card != 'Adicionar ao carrinho'){
-        const h2 = document.getElementsByClassName('carrinho')
-        
-        const divCarrinhoVazio = document.createElement('div')
-        divCarrinhoVazio.classList.add('carrinhoItens')
-
-        const pVazio = document.createElement('p')
-        pVazio.classList.add('vazio')
-        pVazio.innerText = 'Carrinho vazio'
-
-        const pVazioDescricao = document.createElement('p')
-        pVazioDescricao.classList.add('vazioDescricao')
-        pVazioDescricao.innerText = 'Adicione itens'
-
-        divCarrinhoVazio.appendChild(pVazio)
-        divCarrinhoVazio.appendChild(pVazioDescricao)
-        h2.appendChild(divCarrinhoVazio)
-
-    } else {
-        novoProduto.push(arrayProdutos)
-        
-        addCarrinhoCompras(novoProduto)
-    }
 }
-
-
-
-
-
-        
-        
-
