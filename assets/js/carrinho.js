@@ -1,9 +1,5 @@
 function addCarrinhoCompras(arrayProdutos){
 
-    let somaValorTotal = 0
-    let somaItens = 0
-
-    if(somaValorTotal !== 0){
         const carrinho = document.querySelector('.carrinhoItens')
         carrinho.innerText = ''
 
@@ -29,11 +25,11 @@ function addCarrinhoCompras(arrayProdutos){
 
         const pValorQuantidade = document.createElement('p')
         pValorQuantidade.classList.add('valorQuantidade')
-        pCarrinhoQuantidade.innerText = 'Quantidade:' + somaItens
+        pCarrinhoQuantidade.innerText = 'Quantidade:'
 
         const pValorTotal = document.createElement('p')
         pValorTotal.classList.add('valorTotal')
-        pCarrinhoQuantidade.innerText = 'Total: R$ ' + somaValorTotal
+        pCarrinhoQuantidade.innerText = 'Total: R$ '
     
 
         for(let i = 0; i < produtos.length; i++){
@@ -75,13 +71,42 @@ function addCarrinhoCompras(arrayProdutos){
             somaCarrinho.appendChild(divCarrinhoQuantidade)
             somaCarrinho.appendChild(divCarrinhoValor)
         }
+    }
 
-        for(j = 0; j < produtos.length; j++){
-            let somaProduto = parseInt(produtos[i].preco)
-            somaValorTotal += somaProduto
-            somaItens++
-        }
+function carrinhoPosts(evento){
+    const novoProduto = []
+    const card = evento.target
+    const arrayProdutos = document.querySelectorAll('.itemProdutos')
+
+    if(card != 'Adicionar ao carrinho'){
+        const h2 = document.getElementsByClassName('carrinho')
+        
+        const divCarrinhoVazio = document.createElement('div')
+        divCarrinhoVazio.classList.add('carrinhoItens')
+
+        const pVazio = document.createElement('p')
+        pVazio.classList.add('vazio')
+        pVazio.innerText = 'Carrinho vazio'
+
+        const pVazioDescricao = document.createElement('p')
+        pVazioDescricao.classList.add('vazioDescricao')
+        pVazioDescricao.innerText = 'Adicione itens'
+
+        divCarrinhoVazio.appendChild(pVazio)
+        divCarrinhoVazio.appendChild(pVazioDescricao)
+        h2.appendChild(divCarrinhoVazio)
+
+    } else {
+        novoProduto.push(arrayProdutos[i])
+        
+        addCarrinhoCompras(novoProduto)
     }
 }
 
-addCarrinhoCompras(produtos)
+
+
+
+
+        
+        
+
