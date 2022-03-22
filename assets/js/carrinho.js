@@ -73,9 +73,10 @@ function addCarrinhoCompras(arrayProdutos){
         }
     }
 
-function carrinhoPosts(evento){
+function carrinhoPosts(event){
     const novoProduto = []
-    const card = evento.target
+    const card = event.target
+    console.log(card)
     const arrayProdutos = document.querySelectorAll('.itemProdutos')
 
     if(card != 'Adicionar ao carrinho'){
@@ -97,7 +98,7 @@ function carrinhoPosts(evento){
         h2.appendChild(divCarrinhoVazio)
 
     } else {
-        novoProduto.push(arrayProdutos[i])
+        novoProduto.push(arrayProdutos)
         
         addCarrinhoCompras(novoProduto)
     }
