@@ -264,8 +264,19 @@ main {
 
 .divOrganizada {
     display: flex;
-    justify-content: space-evenly;
+    border: 1px solid #F5F5F5;
+}
 
+.divOrganizada:hover {
+    min-width: 1px;
+    min-height: 1px;
+    border: 1px solid #6B54DE;
+    
+}
+
+.carrinhoImagem {
+    margin-left: 10px;
+    margin-right: 15px;
 }
 
 .carrinhoCheio:hover {
@@ -320,6 +331,7 @@ main {
     display: flex;
     justify-content: space-between;
     border: 1px solid #333333;
+    margin-bottom: 20px;
 }
 
 .carrinhoQuantidade {

@@ -1,41 +1,66 @@
 function receberNodeList(){
     const removerProdutos = document.querySelectorAll('.removerProduto')
-    console.log(removerProdutos)
 
-    removerProdutos.forEach((elemento) => elemento.addEventListener('click', function(event){
+    removerProdutos.forEach((elemento) => elemento.addEventListener('click', function removerItens(event){
         const idProduto = event.target.id
-        console.log(idProduto)
-
-/*         const produtoClicado = bancoDeDadosCarrinho.map((elemento) => 
-        (bancoDeDadosCarrinho.indexOf(elemento.id == idProduto)))
-        console.log(produtoClicado)
-
-        const posicao = bancoDeDadosCarrinho.indexOf() */
-    
-/*         const resposta = bancoDeDadosCarrinho.filter((elemento, index) => 
-        {
-            
-        return bancoDeDadosCarrinho.indexOf(elemento.id != idProduto)
-
-        
-        }) //fazer com for
-        console.log(resposta) */
 
         const novoCarrinho = bancoDeDadosCarrinho.splice(bancoDeDadosCarrinho.findIndex((elemento) => 
         elemento.id == idProduto), 1)
 
-        addCarrinhoCompras(bancoDeDadosCarrinho)
+        
 
-    
+        if(bancoDeDadosCarrinho.length == 0){
 
+            //render do carrinho vazio***********
 
+            //pai de todos os elementos
+            const zerandoCarrinhoArea = document.getElementById('carrinhoArea')
+            zerandoCarrinhoArea.innerHTML = ' '
 
+            const vazioSomaCarrinho = document.getElementsByClassName('somaCarrinho')
+            vazioSomaCarrinho.innerHTML = ' '
+            
+            //criando elementos
+            
+            //vazioH2 elemento filho de vazioCarrinhoArea
+            const vazioH2 = document.createElement('h2')
+            vazioH2.classList.add('carrinho')
+            vazioH2.innerText = 'Carrinho de compras'
+            
+            //vazioCarrinhoItens pai de todos os textos
+            const vazioCarrinhoItens = document.createElement('div')
+            vazioCarrinhoItens.classList.add('carrinhoItens')
 
+            //pCarrinhoVazio filho de vazioCarrinhoItens
+            const pCarrinhoVazio = document.createElement('p')
+            pCarrinhoVazio.classList.add('vazio')
+            pCarrinhoVazio.innerText = 'Carrinho vazio'
+
+            //pVazioDescricao filho de vazioCarrinhoItens
+            const pVazioDescricao = document.createElement('p')
+            pVazioDescricao.classList.add('vazioDescricao')
+            pVazioDescricao.innerText = 'Adicione itens'
+            
+            
+            //adicao dos textos no pai dos textos
+            vazioCarrinhoItens.appendChild(pCarrinhoVazio)
+            vazioCarrinhoItens.appendChild(pVazioDescricao)
+
+            //area de adicao de itens
+            zerandoCarrinhoArea.appendChild(vazioH2)
+            zerandoCarrinhoArea.appendChild(vazioCarrinhoItens)
+
+            //fim do render do carrinho vazio*****
+        } else {
+            addCarrinhoCompras(bancoDeDadosCarrinho)
+        }        
     }))
-
 }
 
+
+
 const bancoDeDadosCarrinho = []
+console.log(bancoDeDadosCarrinho.length)
 
 function addCarrinhoCompras(){
 
@@ -44,7 +69,7 @@ function addCarrinhoCompras(){
     let somaQuantidade = bancoDeDadosCarrinho.length
 
         //zerar carrinhoItens
-        const zerandoCarrinhoArea = document.getElementById('carrinhoArea')
+        const zerandoCarrinhoArea = document.getElementById('carrinhoArea')         
         zerandoCarrinhoArea.innerText = ''
 
         //h2 com os dizeres carrinho de compras pre-renderizado
@@ -81,8 +106,17 @@ function addCarrinhoCompras(){
         const divCarrinhoValor = document.createElement('div')
         divCarrinhoValor.classList.add('carrinhoValor')
 
+        //itens dinamicos do divSomaCarrinho
 
+        //valorQuantidade será filho de carrinhoValor **dinamico
+        const pValorQuantidade = document.createElement('p')
+        pValorQuantidade.classList.add('valorQuantidade')
+        pValorQuantidade.innerText = somaQuantidade
 
+        //valorTotal será filho de carrinhoValor **dinamico
+        const pValorTotal = document.createElement('p')
+        pValorTotal.classList.add('valorTotal')
+        pValorTotal.innerText = 'R$ ' + somaValor.toFixed(2)
 
         //itens dinamicos
 
@@ -119,20 +153,8 @@ function addCarrinhoCompras(){
         const spanRemoverItem = document.createElement('span')
         spanRemoverItem.id = bancoDeDadosCarrinho[i].id
         spanRemoverItem.classList.add('removerProduto')
-        spanRemoverItem.innerText = 'Remover produto'
+        spanRemoverItem.innerText = 'Remover produto'       
 
-        
-        //itens dinamicos do divSomaCarrinho
-
-        //valorQuantidade será filho de carrinhoValor **dinamico
-        const pValorQuantidade = document.createElement('p')
-        pValorQuantidade.classList.add('valorQuantidade')
-        pValorQuantidade.innerText = somaQuantidade
-
-        //valorTotal será filho de carrinhoValor **dinamico
-        const pValorTotal = document.createElement('p')
-        pValorTotal.classList.add('valorTotal')
-        pValorTotal.innerText = 'R$ ' + somaValor.toFixed(2)
 
         //area de adicionar filhos e pais dinamicos
 
@@ -179,8 +201,15 @@ function addCarrinhoCompras(){
         //todos os itens pre-rederizados do carrinhoArea
         divCarrinhoArea.appendChild(h2)
         divCarrinhoArea.appendChild(divCarrinhoCheio)
-        divCarrinhoArea.appendChild(divSomaCarrinho)  
+        divCarrinhoArea.appendChild(divSomaCarrinho)
 
         receberNodeList()
+    
 
 }
+
+
+
+    //carrinho vazio
+
+

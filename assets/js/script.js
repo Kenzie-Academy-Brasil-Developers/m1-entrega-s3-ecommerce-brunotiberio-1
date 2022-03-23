@@ -1,9 +1,3 @@
-/* const removerProdutos = document.querySelectorAll('.removerProduto')
- */
-
-
-//botao pesquisar
-
 const buttonBuscar = document.getElementById('botaoBuscar');
 buttonBuscar.addEventListener('click', encontrarProdutos);
 
