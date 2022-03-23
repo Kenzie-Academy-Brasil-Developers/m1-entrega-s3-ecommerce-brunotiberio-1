@@ -13,7 +13,7 @@ listItem.addEventListener('click', filtroPosts)
 const addProdutos = document.getElementById('produtos')
 addProdutos.addEventListener('click', function(){
     for(let i = 0; i < produtos.length; i++){
-        bancoDeDadosCarrinho.push(addProdutos)
+        /* bancoDeDadosCarrinho.push(addProdutos) */
         addCarrinhoCompras(bancoDeDadosCarrinho)
     }
 
