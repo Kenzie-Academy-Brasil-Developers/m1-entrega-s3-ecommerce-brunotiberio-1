@@ -57,6 +57,47 @@ function receberNodeList(){
     }))
 }
 
+//render do carrinho vazio***********
+
+            //pai de todos os elementos
+            const zerandoCarrinhoArea = document.getElementById('carrinhoArea')
+            zerandoCarrinhoArea.innerHTML = ' '
+
+            const vazioSomaCarrinho = document.getElementsByClassName('somaCarrinho')
+            vazioSomaCarrinho.innerHTML = ' '
+            
+            //criando elementos
+            
+            //vazioH2 elemento filho de vazioCarrinhoArea
+            const vazioH2 = document.createElement('h2')
+            vazioH2.classList.add('carrinho')
+            vazioH2.innerText = 'Carrinho de compras'
+            
+            //vazioCarrinhoItens pai de todos os textos
+            const vazioCarrinhoItens = document.createElement('div')
+            vazioCarrinhoItens.classList.add('carrinhoItens')
+
+            //pCarrinhoVazio filho de vazioCarrinhoItens
+            const pCarrinhoVazio = document.createElement('p')
+            pCarrinhoVazio.classList.add('vazio')
+            pCarrinhoVazio.innerText = 'Carrinho vazio'
+
+            //pVazioDescricao filho de vazioCarrinhoItens
+            const pVazioDescricao = document.createElement('p')
+            pVazioDescricao.classList.add('vazioDescricao')
+            pVazioDescricao.innerText = 'Adicione itens'
+            
+            
+            //adicao dos textos no pai dos textos
+            vazioCarrinhoItens.appendChild(pCarrinhoVazio)
+            vazioCarrinhoItens.appendChild(pVazioDescricao)
+
+            //area de adicao de itens
+            zerandoCarrinhoArea.appendChild(vazioH2)
+            zerandoCarrinhoArea.appendChild(vazioCarrinhoItens)
+
+            //fim do render do carrinho vazio*****
+
 
 
 const bancoDeDadosCarrinho = []
