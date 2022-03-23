@@ -253,14 +253,19 @@ main {
 
 .carrinhoCheio{
     width: 345px;
-    height: 344px;
+    min-height: 344px;
     left: 1138px;
     top: 200px;
     background: #F5F5F5;
     border: 1px solid #F5F5F5;
     display: flex;
-    justify-content: space-around;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+.divOrganizada {
+    display: flex;
+    justify-content: space-evenly;
+
 }
 
 .carrinhoCheio:hover {

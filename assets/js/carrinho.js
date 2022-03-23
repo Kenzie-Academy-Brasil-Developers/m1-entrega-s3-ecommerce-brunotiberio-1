@@ -1,14 +1,47 @@
-const bancoDeDadosCarrinho = produtos[0]
+function receberNodeList(){
+    const removerProdutos = document.querySelectorAll('.removerProduto')
+    console.log(removerProdutos)
 
-let somaQuantidade = 0
-let somaValor = 0
+    removerProdutos.forEach((elemento) => elemento.addEventListener('click', function(event){
+        const idProduto = event.target.id
+        console.log(idProduto)
 
-for(let i = 0; i < produtos.length; i++){
-    somaQuantidade++
-    somaValor += produtos[i].preco
+/*         const produtoClicado = bancoDeDadosCarrinho.map((elemento) => 
+        (bancoDeDadosCarrinho.indexOf(elemento.id == idProduto)))
+        console.log(produtoClicado)
+
+        const posicao = bancoDeDadosCarrinho.indexOf() */
+    
+/*         const resposta = bancoDeDadosCarrinho.filter((elemento, index) => 
+        {
+            
+        return bancoDeDadosCarrinho.indexOf(elemento.id != idProduto)
+
+        
+        }) //fazer com for
+        console.log(resposta) */
+
+        const novoCarrinho = bancoDeDadosCarrinho.splice(bancoDeDadosCarrinho.findIndex((elemento) => 
+        elemento.id == idProduto), 1)
+
+        addCarrinhoCompras(bancoDeDadosCarrinho)
+
+    
+
+
+
+
+    }))
+
 }
 
+const bancoDeDadosCarrinho = []
+
 function addCarrinhoCompras(){
+
+    const somaValor = bancoDeDadosCarrinho.reduce((prev, pos) => prev + pos.preco, 0)
+
+    let somaQuantidade = bancoDeDadosCarrinho.length
 
         //zerar carrinhoItens
         const zerandoCarrinhoArea = document.getElementById('carrinhoArea')
@@ -53,7 +86,12 @@ function addCarrinhoCompras(){
 
         //itens dinamicos
 
-        //dinamicos dos itens do carrinho de compras
+        for(let i = 0; i < bancoDeDadosCarrinho.length; i++){
+
+            //dinamicos dos itens do carrinho de compras
+
+        const divOrganizada = document.createElement('div')
+        divOrganizada.classList.add('divOrganizada')
 
         // div da imagem do produto no carrinho, pai da img abaixo **dinamico
         const divCarrinhoImagens = document.createElement('div')
@@ -61,7 +99,7 @@ function addCarrinhoCompras(){
 
         //imagem filho da div imagem **dinamico
         const imgCarrinho = document.createElement('img')
-        imgCarrinho.src = bancoDeDadosCarrinho.img
+        imgCarrinho.src = bancoDeDadosCarrinho[i].img
 
         //div que será pai dos textos dos itens do carrinho e que será adicionada a divCarrinhoCheio ** dinamico
         const divTextoItem = document.createElement('div')
@@ -70,15 +108,16 @@ function addCarrinhoCompras(){
         //nome do produto que será filho da divTextoItem **dinamico
         const h3CarrinhoNome = document.createElement('h3')
         h3CarrinhoNome.classList.add('carrinhoNome')
-        h3CarrinhoNome.innerText = bancoDeDadosCarrinho.nome
+        h3CarrinhoNome.innerText = bancoDeDadosCarrinho[i].nome
 
         //preco do produto que será filho da divTextoItem **dinamico
         const pCarrinhoPreco = document.createElement('p')
         pCarrinhoPreco.classList.add('carrinhoPreco')
-        pCarrinhoPreco.innerText = 'R$ ' + bancoDeDadosCarrinho.preco.toFixed(2)
+        pCarrinhoPreco.innerText = 'R$ ' + bancoDeDadosCarrinho[i].preco.toFixed(2)
 
         //remover produto que será filho da divTextoItem **dinamico
         const spanRemoverItem = document.createElement('span')
+        spanRemoverItem.id = bancoDeDadosCarrinho[i].id
         spanRemoverItem.classList.add('removerProduto')
         spanRemoverItem.innerText = 'Remover produto'
 
@@ -95,11 +134,13 @@ function addCarrinhoCompras(){
         pValorTotal.classList.add('valorTotal')
         pValorTotal.innerText = 'R$ ' + somaValor.toFixed(2)
 
-
-
-        //area de adicionar filhos e pais
+        //area de adicionar filhos e pais dinamicos
 
         //dinamicos
+
+        //div que organiza os itens do carrinho
+        divOrganizada.appendChild(divCarrinhoImagens)
+        divOrganizada.appendChild(divTextoItem)
 
 
         //adicionado a imagem **dinamicos
@@ -113,16 +154,15 @@ function addCarrinhoCompras(){
 
 
         //adicionado a imagem e o item **dinamicos
-        divCarrinhoCheio.appendChild(divCarrinhoImagens)
-        divCarrinhoCheio.appendChild(divTextoItem)
+        divCarrinhoCheio.appendChild(divOrganizada)
 
         //adicionado textos dos itens carrinhoValor
         divCarrinhoValor.appendChild(pValorQuantidade)
         divCarrinhoValor.appendChild(pValorTotal)
 
 
-
-
+        }     
+        
         //tudo adicionado (pre-renderizados)
 
         //todos os itens pre-renderizados da divCarrinhoQuantidade
@@ -140,5 +180,7 @@ function addCarrinhoCompras(){
         divCarrinhoArea.appendChild(h2)
         divCarrinhoArea.appendChild(divCarrinhoCheio)
         divCarrinhoArea.appendChild(divSomaCarrinho)  
+
+        receberNodeList()
 
 }

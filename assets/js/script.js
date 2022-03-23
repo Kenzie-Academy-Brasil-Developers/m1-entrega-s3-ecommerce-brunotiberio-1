@@ -1,3 +1,7 @@
+/* const removerProdutos = document.querySelectorAll('.removerProduto')
+ */
+
+
 //botao pesquisar
 
 const buttonBuscar = document.getElementById('botaoBuscar');
@@ -11,10 +15,16 @@ listItem.addEventListener('click', filtroPosts)
 //botao carrinho
 
 const addProdutos = document.getElementById('produtos')
-addProdutos.addEventListener('click', function(){
-    for(let i = 0; i < produtos.length; i++){
-        /* bancoDeDadosCarrinho.push(addProdutos) */
-        addCarrinhoCompras(bancoDeDadosCarrinho)
-    }
+addProdutos.addEventListener('click', function(event){
+    const idProduto = event.target.id
 
+    const produto = produtos.filter((elemento) => elemento.id === Number(idProduto)) //fazer com for
+    bancoDeDadosCarrinho.push(...produto)
+
+
+console.log(bancoDeDadosCarrinho)
+
+        addCarrinhoCompras(bancoDeDadosCarrinho)
 })
+
+
